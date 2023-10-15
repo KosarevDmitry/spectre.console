@@ -1,12 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <!--TargetFramework for single   -->
+    <!--TargetFrameworks for several  -->
     <TargetFrameworks>net7.0;net6.0;netstandard2.0</TargetFrameworks>
     <Nullable>enable</Nullable>
+    <!-- for "dotnet pack" default true, if false - no .nupkg will create -->
     <IsPackable>true</IsPackable>
+    <!--  https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1633.md -->
     <NoWarn>SA1633</NoWarn>
   </PropertyGroup>
-
+  <!--
+   Content - The file is not compiled, but is included in the Content output group.
+    For example, this setting is the default value for an .htm or other kind of Web file.
+   -->
+  <!-- NONE The file is not included in the project output group and is not compiled in the build process.
+   An example is a text file that contains documentation, such as a Readme file.-->
   <ItemGroup>
     <AdditionalFiles Include="..\stylecop.json" Link="Properties/stylecop.json" />
     <EmbeddedResource Include="Widgets\Figlet\Fonts\Standard.flf" />
